@@ -1,14 +1,22 @@
 **Using Technology to Combat the evolution of Trafficking & Identify Crime Rings**
+
 *If you suspect human trafficking, please call 1-888-3737-888 to notify the National Human Trafficking Resource Center as soon as possible.*
+
+**Overview**:
+This application uses Nokogiri to parse data from Backpage.com and help users flag potential leads to human trafficking rings. A series of wget commands download posts, and Nokogiri is used to parse the data into a Rails application and Postgres database, which is then queried to identify potential child prostitution or crime ring advertisements. In July 2011, hundreds of posts were flagged for investigation and removal by Backpage.com with this method.
+
+
 **Goal**: Examine prevalent online marketplaces to detect patterns in contact information or services across seemingly unrelated offering categories.
+
 **Sources**: Backpages, Craiglist
+
 **Methods**: Pull and standardize site posts, extract phone numbers, age, location, and reporting information
 
 **Relevant Resources**: 
-    * Wired, "How Tech Tools Transformed New York’s Sex Trade" - http://www.wired.com/magazine/2011/01/ff_sextrade/all/1
-    * Polaris Project, "Federal Sex Trafficking Cases in the United States 2000-2008" - https://na4.salesforce.com/sfc/play/index.jsp?oid=00D300000006E4S&d=kyMmYMmV7A9aYN.FSi81fYyeEKo%3D&v=06860000000HqhX&viewId=05H60000000IfVp
+* Wired, "How Tech Tools Transformed New York’s Sex Trade" - http://www.wired.com/magazine/2011/01/ff_sextrade/all/1
+* Polaris Project, "Federal Sex Trafficking Cases in the United States 2000-2008" - https://na4.salesforce.com/sfc/play/index.jsp?oid=00D300000006E4S&d=kyMmYMmV7A9aYN.FSi81fYyeEKo%3D&v=06860000000HqhX&viewId=05H60000000IfVp
 
-**Source: Backpage**	http://newyork.backpage.com/
+**Source: Backpage**	http://newyork.backpage.com/   	
 *Successfully gathered using wget with each category directory as dir:*
     wget --mirror -w 2 -l 4 -I /dir -X /dir/classifieds http://newyork.backpage.com/dir? 
 * Possible Sex Trafficking (Note: data gatherer must hold a cookie across requests to prove age requirement)
